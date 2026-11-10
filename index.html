@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PennyPilot | Personal Budget & Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <section class="landing-screen" id="landing-screen">
+    <header class="landing-top">
+      <div class="landing-social"><span>H</span><strong>PennyPilot</strong></div>
+      <nav class="landing-links">
+        <a href="#landing-home">HOME</a><a href="#landing-about">ABOUT</a><a href="#landing-features">FEATURES</a><a href="#landing-contact">CONTACT</a>
+        <button type="button" id="landing-login-top">LOGIN</button>
+      </nav>
+    </header>
+    <div class="landing-brandbar">
+      <a class="landing-logo" href="#landing-home"><span class="landing-logo-mark">₹</span><span>Home<span>Budget</span><small>PLAN · TRACK · SAVE</small></span></a>
+      <div class="landing-tagline">PERSONAL FINANCE MANAGEMENT</div>
+    </div>
+    <main class="landing-hero" id="landing-home">
+      <div class="landing-hero-shade"></div>
+      <div class="landing-copy">
+        <p class="landing-kicker">TAKE CONTROL OF YOUR MONEY</p>
+        <h1>Make Every Rupee<br><span>Count.</span></h1>
+        <p>Track your income, manage expenses, and understand your spending — all in one simple place.</p>
+        <button class="landing-cta" type="button" id="landing-get-started">Get Started <span>→</span></button>
+        <div class="landing-trust">A smarter way to manage your everyday finances.</div>
+      </div>
+      <div class="landing-visual" aria-hidden="true">
+        <div class="visual-card visual-card-main"><div class="visual-card-head"><span>MONTHLY OVERVIEW</span><b>•••</b></div><div class="visual-label">Available balance</div><div class="visual-amount">₹ 24,850</div><div class="visual-positive">↗ Keep your finances on track</div><div class="visual-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="visual-months"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div>
+        <div class="visual-card visual-card-small"><span class="visual-small-icon">↘</span><div><small>Expenses tracked</small><strong>Stay in control</strong></div></div>
+      </div>
+      <div class="hero-bottom"><span>01 / SIMPLE MONEY MANAGEMENT</span><span>SCROLL TO EXPLORE ↓</span></div>
+    </main>
+    <section class="landing-features" id="landing-features">
+      <p class="landing-kicker">EVERYTHING IN ONE PLACE</p><h2>Build better money habits.</h2>
+      <div class="landing-feature-grid"><article><b>01</b><h3>Track expenses</h3><p>Record everyday spending and know where your money goes.</p></article><article><b>02</b><h3>Manage income</h3><p>Keep income and expenses together in one clear dashboard.</p></article><article><b>03</b><h3>Understand spending</h3><p>View category-wise summaries and monthly progress.</p></article></div>
+    </section>
+    <footer class="landing-footer" id="landing-contact"><span>PennyPilot · Personal Expense Tracker</span><button type="button" id="landing-login-footer">Sign in to your account →</button></footer>
+  </section>
+
+  <section class="auth-screen" id="auth-screen" style="display:none;">
+    <div class="auth-card"><button class="auth-back-button" id="auth-back-home" type="button">← Back to home</button>
+      <div class="auth-brand-mark">H</div>
+      <p class="auth-eyebrow">PERSONAL FINANCE, MADE SIMPLE</p>
+      <h1>Welcome to <span>PennyPilot</span></h1>
+      <p class="auth-description" id="auth-description">Sign in or create an account using your email.</p>
+      <form id="auth-form">
+        <div id="name-field" hidden>
+          <label for="user-name">Your name</label>
+          <input id="user-name" type="text" autocomplete="name" placeholder="Enter your name" maxlength="60">
+        </div>
+        <label for="email">Email address</label>
+        <input id="email" type="email" autocomplete="email" placeholder="Enter your email" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="6" required>
+        <button class="auth-primary-button" id="auth-submit" type="submit">Sign in</button>
+      </form>
+      <button class="auth-secondary-button" id="mode-button" type="button">Create a new account</button>
+      <button class="auth-text-button" id="reset-button" type="button">Forgot password?</button>
+      <p class="auth-message" id="auth-message" role="status"></p>
+      <p class="auth-footnote">Secure email and password authentication powered by PennyPilot.</p>
+    </div>
+  </section>
+
+  <div class="app-shell" id="app-shell" style="display:none;">
+    <aside class="sidebar">
+      <a class="brand" href="#dashboard">
+        <span class="brand-mark">H</span>
+        <span>Home<span class="brand-light">Budget</span></span>
+      </a>
+
+      <p class="nav-label">WORKSPACE</p>
+      <nav class="nav">
+        <a class="nav-link active" href="#dashboard"><span class="nav-icon">▦</span> Dashboard</a>
+        <a class="nav-link" href="#transactions"><span class="nav-icon">↔</span> Transactions</a>
+        <a class="nav-link" href="#add-expense"><span class="nav-icon">＋</span> Add expense</a>
+        <a class="nav-link" href="#income"><span class="nav-icon">↗</span> Income</a>
+        <a class="nav-link" href="#budget"><span class="nav-icon">◎</span> Budget</a>
+        <a class="nav-link" href="#analysis"><span class="nav-icon">▥</span> Analysis</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <div class="help-icon">✦</div>
+          <strong>Small steps matter</strong>
+          <p>Keep track of your spending and work toward your savings goals.</p>
+        </div>
+        <div class="profile">
+          <div class="avatar" id="sidebar-avatar">U</div>
+          <div><strong class="user-name">Your Profile</strong><span>Personal account</span></div>
+          <span class="profile-menu">•••</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+      <header class="topbar">
+        <div class="breadcrumb">Workspace <span>/</span> <strong>Dashboard</strong></div>
+        <div class="top-actions">
+          <span class="demo-badge"><span></span> Live data</span>
+          <button class="icon-button" aria-label="Notifications">♧</button>
+          <button class="signout-button" id="signout-button" type="button">Sign out</button><div class="avatar small" id="user-avatar">Y</div>
+        </div>
+      </header>
+
+      <section class="welcome-row">
+        <div>
+          <p class="eyebrow">YOUR MONEY, IN ONE PLACE</p>
+          <h1>Welcome, <span class="user-name">User</span><span class="title-dot">.</span></h1>
+          <p class="muted">Here’s a snapshot of your personal finances.</p>
+        </div>
+        <a class="primary-button" href="#add-expense"><span>＋</span> Add transaction</a>
+      </section>
+
+      <section class="summary-grid" aria-label="Financial summary">
+        <article class="summary-card budget-card">
+          <div class="card-top"><span>Monthly budget</span><span class="metric-icon purple">◎</span></div>
+          <div class="metric-value" id="budget-value">₹0</div>
+          <div class="metric-foot"><span class="status-dot purple-dot"></span> Planned for this month</div>
+          <div class="mini-track"><span class="track-purple" style="width:50%"></span></div>
+        </article>
+        <article class="summary-card expense-card">
+          <div class="card-top"><span>Total expenses</span><span class="metric-icon orange">↘</span></div>
+          <div class="metric-value" id="expense-value">₹0</div>
+          <div class="metric-foot"><span class="trend neutral">50%</span> of your budget used</div>
+          <div class="mini-track"><span class="track-orange" style="width:50%"></span></div>
+        </article>
+        <article class="summary-card remaining-card">
+          <div class="card-top"><span>Remaining budget</span><span class="metric-icon green">✓</span></div>
+          <div class="metric-value" id="remaining-value">₹0</div>
+          <div class="metric-foot"><span class="status-dot green-dot"></span> Available to spend</div>
+          <div class="mini-track"><span class="track-green" style="width:50%"></span></div>
+        </article>
+        <article class="summary-card income-card">
+          <div class="card-top"><span>Total income</span><span class="metric-icon blue">↗</span></div>
+          <div class="metric-value" id="income-value">₹0</div>
+          <div class="metric-foot"><span class="status-dot blue-dot"></span> Recorded this month</div>
+          <div class="mini-track"><span class="track-blue" style="width:75%"></span></div>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel spending-panel" id="analysis">
+          <div class="panel-heading">
+            <div><h2>Spending overview</h2><p class="muted">A category-wise look at your expenses</p></div>
+            <span class="period-pill">This month</span>
+          </div>
+          <div class="chart-area">
+            <div class="donut-wrap">
+              <div class="donut" id="expense-donut"><div class="donut-center"><span>Total spent</span><strong id="chart-total">₹0</strong></div></div>
+            </div>
+            <div class="legend" id="category-legend"><p class="muted">No expenses recorded yet.</p></div>
+          </div>
+          <div class="insight"><span class="insight-icon">✦</span><span><strong>Spending insight</strong><br>Food is your largest expense category in this sample data.</span></div>
+        </article>
+
+        <article class="panel budget-panel" id="budget">
+          <div class="panel-heading">
+            <div><h2>Budget progress</h2><p class="muted">Your monthly spending limit</p></div>
+            <span class="metric-icon purple">◎</span>
+          </div>
+          <div class="budget-number"><strong id="budget-spent">₹0</strong><span>of ₹0</span></div>
+          <div class="progress-track"><span id="budget-progress"></span></div>
+          <div class="progress-labels"><span id="budget-used-label">0% used</span><span id="budget-left-label">Set a budget</span></div>
+          <div class="budget-divider"></div>
+          <div class="budget-detail"><span class="detail-icon green-bg">✓</span><div><strong id="budget-status">No monthly budget set</strong><p id="budget-status-detail">Add a budget to track your spending.</p></div></div>
+          <a href="#add-expense" class="text-link">Track a new expense <span>→</span></a>
+        </article>
+      </section>
+
+      <section class="panel transactions-panel" id="transactions">
+        <div class="panel-heading transaction-heading">
+          <div><h2>Transactions</h2><p class="muted">Your saved income and expenses</p></div>
+          <a class="text-link" href="#transactions">View all <span>→</span></a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>TRANSACTION</th><th>CATEGORY</th><th>DATE</th><th>AMOUNT</th><th>TYPE</th><th>ACTIONS</th></tr></thead>
+            <tbody id="transactions-body"><tr><td colspan="6">Loading transactions...</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel form-panel" id="add-expense">
+          <div class="panel-heading"><div><h2 id="transaction-form-title">Add transaction</h2><p class="muted">Save income or expenses to your account</p></div><span class="metric-icon orange">＋</span></div>
+          <form id="transaction-form">
+            <label for="transaction-type">Transaction type</label>
+            <select id="transaction-type" required><option value="expense">Expense</option><option value="income">Income</option></select>
+            <label for="description">Description</label>
+            <input id="description" type="text" placeholder="e.g. Lunch, salary" maxlength="80" required>
+            <div class="form-row">
+              <div><label for="amount">Amount (₹)</label><input id="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required></div>
+              <div><label for="category">Category</label><select id="category" required><option value="">Select category</option><option>Food</option><option>Travel</option><option>Bills</option><option>Shopping</option><option>Education</option><option>Salary</option><option>Allowance</option><option>Other</option></select></div>
+            </div>
+            <label for="date">Date</label>
+            <input id="date" type="date" required>
+            <button class="primary-button submit-button" id="save-transaction" type="submit">Save transaction</button>
+            <button class="auth-secondary-button" id="cancel-edit" type="button" hidden>Cancel edit</button>
+            <p class="form-note" id="transaction-message" role="status">Your transactions are private to your account.</p>
+          </form>
+        </article>
+
+        <article class="panel income-panel" id="income">
+          <div class="panel-heading"><div><h2>Income summary</h2><p class="muted">Money received this month</p></div><span class="metric-icon blue">↗</span></div>
+          <div class="income-total" id="income-panel-total">₹0 <span>total income this month</span></div><p class="muted">Income entries are listed in the transactions table.</p>
+        </article>
+      </section>
+
+      <footer class="footer"><span>PennyPilot · Expense Tracker & Analysis</span><span>Personal transactions securely stored in your PennyPilot MySQL account</span></footer>
+    </main>
+  </div>
+
+  <script>
+    const $ = id => document.getElementById(id);
+    const API_BASE = "";
+    const TOKEN_KEY = "pennypilot_access_token";
+    const USER_KEY = "pennypilot_user";
+    let isSignUp = false;
+    let activeUser = null;
+    let transactions = [];
+    let categories = [];
+    let budgets = [];
+    let editingId = null;
+    const money = value => new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 2 }).format(Number(value) || 0);
+    const today = new Date().toLocaleDateString("en-CA");
+    const token = () => localStorage.getItem(TOKEN_KEY);
+
+    async function api(path, options = {}) {
+      const headers = { "Content-Type": "application/json", ...(options.headers || {}) };
+      if (token()) headers.Authorization = `Bearer ${token()}`;
+      const response = await fetch(`${API_BASE}${path}`, { ...options, headers });
+      let payload = {};
+      try { payload = await response.json(); } catch (_) {}
+      if (!response.ok) {
+        if (response.status === 401) clearSession();
+        throw new Error(payload.message || `Request failed (${response.status})`);
+      }
+      return payload;
+    }
+    function clearSession() { localStorage.removeItem(TOKEN_KEY); localStorage.removeItem(USER_KEY); activeUser = null; }
+    const landingScreen = $("landing-screen"), authScreen = $("auth-screen"), appShell = $("app-shell");
+    function showLanding() { landingScreen.style.display="block"; authScreen.style.display="none"; appShell.style.display="none"; window.scrollTo(0,0); }
+    function showAuth() { landingScreen.style.display="none"; authScreen.style.display="grid"; appShell.style.display="none"; window.scrollTo(0,0); }
+    ["landing-get-started","landing-login-top","landing-login-footer"].forEach(id => $(id).addEventListener("click", showAuth));
+    $("auth-back-home").addEventListener("click", showLanding);
+    function showMessage(message, isError=false) { $("auth-message").textContent=message; $("auth-message").classList.toggle("error",isError); }
+    function setMode(signUp) {
+      isSignUp=signUp; $("name-field").hidden=!signUp; $("auth-submit").textContent=signUp?"Create account":"Sign in";
+      $("mode-button").textContent=signUp?"Already have an account? Sign in":"Create a new account";
+      $("reset-button").hidden=true;
+      $("auth-description").textContent=signUp?"Create your PennyPilot account using your email.":"Sign in to manage your personal finances.";
+      $("password").autocomplete=signUp?"new-password":"current-password"; showMessage("");
+    }
+    $("mode-button").addEventListener("click",()=>setMode(!isSignUp));
+    $("auth-form").addEventListener("submit", async event=>{
+      event.preventDefault();
+      const email=$("email").value.trim(), password=$("password").value, name=$("user-name").value.trim();
+      if(isSignUp && !name) return showMessage("Please enter your name.",true);
+      if(password.length<8) return showMessage("Password must contain at least 8 characters.",true);
+      $("auth-submit").disabled=true; showMessage(isSignUp?"Creating your account...":"Signing in...");
+      try {
+        if(isSignUp) await api("/api/auth/signup",{method:"POST",body:JSON.stringify({full_name:name,email,password})});
+        const result=await api("/api/auth/login",{method:"POST",body:JSON.stringify({email,password})});
+        localStorage.setItem(TOKEN_KEY,result.access_token); localStorage.setItem(USER_KEY,JSON.stringify(result.user));
+        activeUser=result.user; await openDashboard();
+      } catch(error) { showMessage(error.message,true); }
+      finally { $("auth-submit").disabled=false; }
+    });
+    $("reset-button").addEventListener("click",()=>showMessage("Password reset is not configured yet. Please contact your project administrator.",true));
+    $("signout-button").addEventListener("click",()=>{ clearSession(); transactions=[]; showLanding(); setMode(false); });
+
+    async function openDashboard() {
+      if(!activeUser) return;
+      const name=activeUser.full_name || activeUser.email.split("@")[0];
+      document.querySelectorAll(".user-name").forEach(el=>el.textContent=name);
+      $("user-avatar").textContent=name[0].toUpperCase(); $("sidebar-avatar").textContent=name[0].toUpperCase();
+      $("auth-screen").style.display="none"; $("landing-screen").style.display="none"; $("app-shell").style.display="";
+      await Promise.all([loadCategories(),loadTransactions(),loadBudgets()]);
+    }
+    async function loadCategories() {
+      const result=await api(`/api/categories/${activeUser.user_id}`); categories=result.categories||[]; updateCategoryOptions();
+    }
+    function updateCategoryOptions() {
+      const select=$("category"), previous=select.value, type=$("transaction-type").value;
+      const filtered=categories.filter(c=>c.category_type===type);
+      select.innerHTML='<option value="">Select category</option>'+filtered.map(c=>`<option value="${c.category_id}">${escapeHtml(c.category_name)}</option>`).join("");
+      if(filtered.some(c=>String(c.category_id)===previous)) select.value=previous;
+    }
+    $("transaction-type").addEventListener("change",updateCategoryOptions);
+    async function loadTransactions() {
+      try { const result=await api("/api/transactions"); transactions=(result.transactions||[]).map(t=>({id:String(t.transaction_id),category_id:Number(t.category_id),category:t.category_name,type:t.transaction_type,description:t.description||"",amount:Number(t.amount),date:t.transaction_date})); renderAll(); }
+      catch(error) { console.error(error); $("transactions-body").innerHTML=`<tr><td colspan="6">${escapeHtml(error.message)}</td></tr>`; }
+    }
+    async function loadBudgets() {
+      try { const result=await api(`/api/budgets/${activeUser.user_id}`); const now=new Date(); budgets=(result.budgets||[]).filter(b=>Number(b.month)===now.getMonth()+1 && Number(b.year)===now.getFullYear()); renderAll(); }
+      catch(error) { console.error("Budget loading:",error); budgets=[]; renderAll(); }
+    }
+    function escapeHtml(value) { return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+    function renderAll() {
+      const now=new Date(), monthItems=transactions.filter(t=>{const d=new Date(t.date+"T00:00:00");return d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear();});
+      const income=monthItems.filter(t=>t.type==="income").reduce((a,t)=>a+t.amount,0), expense=monthItems.filter(t=>t.type==="expense").reduce((a,t)=>a+t.amount,0);
+      const budget=budgets.reduce((a,b)=>a+Number(b.amount),0), remaining=budget-expense;
+      $("income-value").textContent=money(income); $("expense-value").textContent=money(expense); $("budget-value").textContent=budget?money(budget):"Not set"; $("remaining-value").textContent=budget?money(remaining):money(income-expense);
+      $("income-panel-total").innerHTML=`${money(income)} <span>total income this month</span>`;
+      $("budget-spent").textContent=money(expense); $("budget-spent").nextElementSibling.textContent=`of ${money(budget)}`;
+      const pct=budget?Math.min(100,expense/budget*100):0; $("budget-progress").style.width=pct+"%"; $("budget-used-label").textContent=budget?`${Math.round(pct)}% used`:"0% used"; $("budget-left-label").textContent=budget?`${Math.max(0,100-Math.round(pct))}% left`:"Set a budget";
+      $("budget-status").textContent=!budget?"No monthly budget set":expense<=budget?"Within your budget":"Budget exceeded";
+      $("budget-status-detail").textContent=budget?`${money(Math.abs(remaining))} ${remaining>=0?"remaining this month.":"over your budget."}`:"Set category budgets to track spending.";
+      const budgetCard=document.querySelector(".budget-card .card-top"); budgetCard.querySelector("span").textContent="Monthly category budgets";
+      renderTable(); renderAnalysis(monthItems,expense);
+    }
+    function renderTable() {
+      const body=$("transactions-body");
+      if(!transactions.length){body.innerHTML='<tr><td colspan="6">No transactions yet. Add your first income or expense below.</td></tr>';return;}
+      body.innerHTML=transactions.map(t=>`<tr><td><span class="transaction-title">${escapeHtml(t.description)}</span></td><td><span class="category-pill">${escapeHtml(t.category)}</span></td><td>${new Date(t.date+"T00:00:00").toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"})}</td><td class="amount ${t.type==="income"?"income-amount":"expense-amount"}">${t.type==="income"?"+":"−"} ${money(t.amount)}</td><td><span class="type-${t.type}">${t.type}</span></td><td><button class="row-action" data-edit="${t.id}" type="button">Edit</button> <button class="row-action delete-action" data-delete="${t.id}" type="button">Delete</button></td></tr>`).join("");
+      body.querySelectorAll("[data-edit]").forEach(b=>b.addEventListener("click",()=>editTransaction(b.dataset.edit)));
+      body.querySelectorAll("[data-delete]").forEach(b=>b.addEventListener("click",()=>removeTransaction(b.dataset.delete)));
+    }
+    function renderAnalysis(items,totalExpense) {
+      const totals={}; items.filter(t=>t.type==="expense").forEach(t=>totals[t.category]=(totals[t.category]||0)+t.amount);
+      const entries=Object.entries(totals).sort((a,b)=>b[1]-a[1]), colors=["#8b79ed","#f0a15c","#5bbf9b","#6c9de8","#e879a5","#b5a46b"];
+      $("chart-total").textContent=money(totalExpense); let cursor=0;
+      const slices=entries.map(([cat,val],i)=>{const from=cursor;cursor+=totalExpense?val/totalExpense*100:0;return `${colors[i%colors.length]} ${from}% ${cursor}%`;});
+      $("expense-donut").style.background=totalExpense?`conic-gradient(${slices.join(",")})`:"#edf0f5";
+      $("category-legend").innerHTML=entries.length?entries.map(([cat,val],i)=>`<div class="legend-row"><span class="legend-name"><i class="legend-dot" style="background:${colors[i%colors.length]}"></i>${escapeHtml(cat)}</span><strong>${money(val)}</strong><span class="legend-percent">${Math.round(val/totalExpense*100)}%</span></div>`).join(""):'<p class="muted">No expenses recorded this month.</p>';
+      const top=entries[0]; document.querySelector(".insight").innerHTML=top?`<span class="insight-icon">✦</span><span><strong>Spending insight</strong><br>${escapeHtml(top[0])} is your highest expense category this month (${money(top[1])}).</span>`:'<span class="insight-icon">✦</span><span><strong>Spending insight</strong><br>Add expenses to see your category-wise analysis.</span>';
+    }
+    $("transaction-form").addEventListener("submit",async event=>{
+      event.preventDefault(); if(!activeUser)return;
+      const data={transaction_type:$("transaction-type").value,description:$("description").value.trim(),amount:Number($("amount").value),category_id:Number($("category").value),transaction_date:$("date").value};
+      if(!data.description||!data.category_id||!data.transaction_date||!Number.isFinite(data.amount)||data.amount<=0){$("transaction-message").textContent="Enter valid transaction details.";return;}
+      $("save-transaction").disabled=true; $("transaction-message").textContent="Saving...";
+      try { await api(editingId?`/api/transactions/${editingId}`:"/api/transactions",{method:editingId?"PUT":"POST",body:JSON.stringify(data)}); resetForm(); $("transaction-message").textContent="Transaction saved successfully."; await loadTransactions(); }
+      catch(error){$("transaction-message").textContent=error.message;}
+      finally{$("save-transaction").disabled=false;}
+    });
+    function editTransaction(id){const t=transactions.find(x=>x.id===id);if(!t)return;editingId=id;$("transaction-type").value=t.type;updateCategoryOptions();$("description").value=t.description;$("amount").value=t.amount;$("category").value=String(t.category_id);$("date").value=t.date;$("transaction-form-title").textContent="Edit transaction";$("save-transaction").textContent="Update transaction";$("cancel-edit").hidden=false;location.hash="#add-expense";}
+    async function removeTransaction(id){const item=transactions.find(t=>t.id===id);if(!item||!confirm(`Delete ${item.description}?`))return;try{await api(`/api/transactions/${id}`,{method:"DELETE"});await loadTransactions();}catch(error){alert(`Could not delete transaction: ${error.message}`);}}
+    function resetForm(){editingId=null;$("transaction-form").reset();$("date").value=today;$("transaction-type").value="expense";updateCategoryOptions();$("transaction-form-title").textContent="Add transaction";$("save-transaction").textContent="Save transaction";$("cancel-edit").hidden=true;}
+    $("cancel-edit").addEventListener("click",resetForm); $("date").value=today;
+    const budgetCard=document.querySelector(".budget-card .card-top"); budgetCard.style.cursor="pointer"; budgetCard.title="Click to add a monthly category budget";
+    budgetCard.addEventListener("click",async()=>{
+      const expenseCats=categories.filter(c=>c.category_type==="expense");if(!expenseCats.length)return alert("No expense categories are available.");
+      const categoryName=prompt("Enter the exact expense category name:\n"+expenseCats.map(c=>c.category_name).join(", "));if(!categoryName)return;
+      const category=expenseCats.find(c=>c.category_name.toLowerCase()===categoryName.trim().toLowerCase());if(!category)return alert("Category not found. Please use one of the listed names.");
+      const value=prompt(`Enter monthly budget for ${category.category_name} (₹):`);if(value===null)return;const amount=Number(value);if(!Number.isFinite(amount)||amount<=0)return alert("Enter a valid positive amount.");
+      const now=new Date();try{await api("/api/budgets",{method:"POST",body:JSON.stringify({category_id:category.category_id,amount,month:now.getMonth()+1,year:now.getFullYear()})});await loadBudgets();alert("Monthly category budget saved.");}catch(error){alert(error.message);}
+    });
+    async function restoreSession(){const saved=localStorage.getItem(USER_KEY);if(!token()||!saved){clearSession();showLanding();return;}try{activeUser=JSON.parse(saved);await api("/api/transactions");await openDashboard();}catch(error){clearSession();showLanding();}}
+    setMode(false); restoreSession();
+  </script>
+
+</body>
+</html>
